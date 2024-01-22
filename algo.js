@@ -1,37 +1,21 @@
-function analyzeSentence(sentence) {
-    let vowels = 'aeiou';
-    let vowelCount = 0;
-    let wordCount = 0;
-    let characterCount = 0;
-
-    for (let i = 0; i < sentence.length; i++) {
-        let char = sentence.charAt(i);
-        characterCount++;
-
-        if (vowels.includes(char.toLowerCase())) {
-            vowelCount++;
-        }
-
-        if (char === ' ') {
-            wordCount++;
-        }
-    }
-
-    
-    if (sentence.charAt(sentence.length - 1) !== ' ') {
-        wordCount++;
-    }
-
-    return {
-        characterCount: characterCount,
-        wordCount: wordCount,
-        vowelCount: vowelCount
-    };
-}
-
-
-let sentence = "Ahmed Taha Seddiki";
-let { characterCount, wordCount, vowelCount } = analyzeSentence(sentence);
-console.log(`Length of sentence: ${characterCount}`);
-console.log(`Number of words: ${wordCount}`);
-console.log(`Number of vowels: ${vowelCount}`);
+ALGORITHM checkpoint
+VAR
+    ch:STRING;
+    i,j,voyc,nbw:INTEGER;
+    voy : string := aeyuioAEYUIO;
+BEGIN
+    write("donner une phrase");
+    read(ch);
+    voyc=0;
+    nbw:=1;
+    FOR i FROM 0 TO long(ch) STEP 1  DO
+        FOR j FROM 0 TO long(voy) STEP 1  DO
+            IF (ch(i)==voy(j)) THEN
+                voyc:=voyc+1;
+            END_IF
+        END_FOR
+        IF (ch(i)==" ") THEN
+            nbw:=nbw+1;
+        END_IF
+    END_FOR
+END
